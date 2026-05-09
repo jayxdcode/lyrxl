@@ -10,7 +10,7 @@ import { getCached, setCached } from './cache.js';
 import { callProviders, getProviderModels } from './lib/googleAI.mjs';
 
 const app = express();
-const port = Number(process.env.LRC_BACKEND_PORT || 3000);
+const port = Number(process.env.LRX_BACKEND_PORT || 3000);
 
 const serverConfig = {
 	defaultIns: `
