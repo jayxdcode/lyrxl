@@ -1,10 +1,10 @@
 # lyrxl
 
-A JavaScript-based application for managing and syncing song lyrics and metadata.
+A JavaScript-based application for translation and romanization of lyrics from LRCLib API
 
 ## Overview
 
-**lyrxl** is a lyric management and translation system built with Node.js. It provides API endpoints for retrieving, caching, and translating song lyrics from various sources. The project uses LibSQL for database management and integrates with the Google AI API for intelligent content processing.
+**lyrxl** is a lyric management and translation system built with Node.js. It provides API endpoints for translation and romanization of song lyrics. The project uses LibSQL for database management and integrates with the Google AI API for intelligent content processing.
 
 ## Features
 
@@ -64,7 +64,7 @@ The server will start on the configured port.
 
 ### Translate Endpoint
 - **POST** `/api/translate`
-  - Request body: `{ lrclib_id: number, plain: boolean }`
+  - Request body: `{ lrclib_id: number, plain: boolean, lrcText : string, title: string, artist: string }`
   - Returns translated lyric content using AI processing
 
 ### Cache Endpoints
