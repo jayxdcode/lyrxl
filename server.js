@@ -4,7 +4,15 @@ import cors from 'cors';
 import crypto from 'crypto';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
-import { createClient } from '@libsql/client/web';
+
+let createClient;
+try {
+	const module = await import('@libsql/client');
+	createClient = module.createClient;
+} catch {
+	const module = await import('@libsql/client/web');
+	createClient = module.createClient;
+}
 
 import { getCached, setCached } from './cache.js';
 import { callProviders, getProviderModels } from './lib/googleAI.mjs';
